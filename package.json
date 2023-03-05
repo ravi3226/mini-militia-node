@@ -1,0 +1,37 @@
+{
+  "name": "chess",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./dist/index.js",
+  "type": "module",
+  "scripts": {
+    "pre-build": "tslint -c tslint.json -p tsconfig.json --fix",
+    "build": "tsc",
+    "build-watch": "tsc -w",
+    "pre-start": "npm run build",
+    "start": "concurrently --kill-others \"npm run build-watch\" \"nodemon ./dist\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^18.13.0",
+    "concurrently": "^7.6.0",
+    "dotenv": "^16.0.3",
+    "nodemon": "^2.0.20",
+    "pino-pretty": "^9.3.0",
+    "typescript": "^4.9.5"
+  },
+  "dependencies": {
+    "@socket.io/redis-adapter": "^8.1.0",
+    "engine.io": "^6.4.1",
+    "express": "^4.18.2",
+    "joi": "^17.8.3",
+    "jsonwebtoken": "^9.0.0",
+    "mongoose": "^6.9.2",
+    "pino": "^8.10.0",
+    "pino-multi-stream": "^6.0.0",
+    "redis": "^4.6.4",
+    "socket.io": "^4.5.4"
+  }
+}
